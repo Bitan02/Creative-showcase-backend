@@ -26,6 +26,17 @@ app.get('/api/health', (req, res) => {
   res.json({ message: 'Server is running' });
 });
 
+
+
+app.use(cors({
+  origin: [
+    "https://artist-image-vault-client-flame.vercel.app/"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
+
 // Connect to MongoDB
 mongoose
   .connect(process.env.MONGO_URI)
