@@ -30,7 +30,7 @@ app.get('/api/health', (req, res) => {
 
 app.use(cors({
   origin: [
-    "https://artist-image-vault-client-flame.vercel.app/"
+    "https://artist-image-vault-client-njgi9srd5-bitan-karaks-projects.vercel.app/"
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
