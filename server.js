@@ -26,28 +26,15 @@ app.get('/api/health', (req, res) => {
   res.json({ message: 'Server is running' });
 });
 
-
-
-app.use(cors({
-  origin: [
-    "https://artist-image-vault-client-njgi9srd5-bitan-karaks-projects.vercel.app/"
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
-
-
 // Connect to MongoDB
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
     console.log('Connected to MongoDB');
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
-    });
   })
   .catch((error) => {
     console.error('MongoDB connection error:', error);
-    process.exit(1);
   });
+
+export default app;
 
